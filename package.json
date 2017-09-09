@@ -4,7 +4,7 @@
   "description": "Endpoint for wool node exposing an API for VLC player",
   "main": "src/wool-vlc.js",
   "scripts": {
-    "test": "npm test"
+    "test": "./node_modules/mocha/bin/mocha ./test/test.js"
   },
   "repository": {
     "type": "git",
@@ -21,8 +21,10 @@
     "wool": "git+https://github.com/dilutedh2o/wool.git"
   },
   "devDependencies": {
+    "chai": "^4.1.2",
     "eslint": "^4.6.1",
     "eslint-config-airbnb-base": "^12.0.0",
-    "eslint-plugin-import": "^2.7.0"
+    "eslint-plugin-import": "^2.7.0",
+    "mocha": "^3.5.0"
   }
 }
