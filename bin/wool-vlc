@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+const program = require('commander');
+const WoolVlc = require('../src/wool-vlc');
+const packageConf = require('../package.json');
+
+program
+.version(packageConf.version);
+
+program
+.command('start')
+.description('start the node: start listening out for video streams and player commands')
+.action(() => {
+    const woolVlc = new WoolVlc();
+
+    woolVlc.start();
+});
+
+program.parse(process.argv);

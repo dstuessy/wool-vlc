@@ -1,0 +1,28 @@
+{
+  "name": "wool-vlc",
+  "version": "1.0.0",
+  "description": "Endpoint for wool node exposing an API for VLC player",
+  "main": "src/wool-vlc.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dstuessy/wool-vlc.git"
+  },
+  "author": "Daniel Stuessy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dstuessy/wool-vlc/issues"
+  },
+  "homepage": "https://github.com/dstuessy/wool-vlc#readme",
+  "dependencies": {
+    "commander": "^2.11.0",
+    "wool": "git+https://github.com/dilutedh2o/wool.git"
+  },
+  "devDependencies": {
+    "eslint": "^4.6.1",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-plugin-import": "^2.7.0"
+  }
+}
