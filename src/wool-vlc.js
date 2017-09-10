@@ -42,21 +42,23 @@ module.exports = class WoolVLC extends Wool {
     onVideoStream(socket) {
         this.openTempFileStream()
         .then((tempFile) => {
-            socket.on('data', once(() => {
-                this.emit('video:pipe', tempFile);
-
-                const media = vlc.mediaFromFile(tempFile.path);
-                const player = vlc.mediaplayer;
-
-                player.media = media;
-                player.play();
-            }));
+            socket.on('data', once(this.onFirstDataWrite.bind(this, tempFile)));
 
             socket.pipe(tempFile.writeStream);
         })
         .catch((err) => {
             throw Error(err);
         });
+    }
+
+    onFirstDataWrite(tempFile) {
+        this.emit('video:pipe', tempFile);
+
+        const media = vlc.mediaFromFile(tempFile.path);
+        const player = vlc.mediaplayer;
+
+        player.media = media;
+        player.play();
     }
 
     openTempFileStream() {
