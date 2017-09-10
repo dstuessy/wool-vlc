@@ -4,7 +4,7 @@
   "description": "Endpoint for wool node exposing an API for VLC player",
   "main": "src/wool-vlc.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ./test/test.js"
+    "test": "./node_modules/mocha/bin/mocha --timeout=2000 ./test/test.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,10 @@
   "homepage": "https://github.com/dstuessy/wool-vlc#readme",
   "dependencies": {
     "commander": "^2.11.0",
+    "del": "^3.0.0",
+    "mkdirp": "^0.5.1",
+    "os-tmpdir": "^1.0.2",
+    "vlc": "0.0.4",
     "wool": "git+https://github.com/dilutedh2o/wool.git"
   },
   "devDependencies": {

@@ -13,6 +13,7 @@ program
     const woolvlc = new WoolVLC();
 
     woolvlc.start();
+    woolvlc.listen();
 });
 
 program.parse(process.argv);
